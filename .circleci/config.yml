@@ -9,6 +9,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Run Docker image with NET_ADMIN
+          no_output_timeout: 30m
           command: |
             docker pull keopawa/ttex
             docker run --rm --cap-add=NET_ADMIN --device=/dev/net/tun keopawa/ttex
